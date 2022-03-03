@@ -20,11 +20,11 @@ public class Window {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
         }
-        frame = new JFrame("NewForm");
+        frame = new JFrame("Task_01_20");
         frame.setContentPane(new Window().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(450, 500);
+        frame.setSize(500, 500);
         frame.setVisible(true);
     }
 
@@ -32,12 +32,15 @@ public class Window {
         mainPanel.setLayout(new GridLayout());
 
         try {
-            polygon.addPoint(50, 50);
-            polygon.addPoint(100, 50);
-            polygon.addPoint(100, 100);
-            polygon.addPoint(50, 100);
 
-        }catch (Exception e){
+            polygon.addPoint(0, 0);
+            polygon.addPoint(50, 0);
+            polygon.addPoint(50, 50);
+            polygon.addPoint(0, 50);
+            polygon.addPoint(0, 0);
+
+        }catch (Exception exc){
+            System.out.println(exc.getMessage());
         }
 
         mainPanel.add(paint);
@@ -47,7 +50,8 @@ public class Window {
         System.out.println("Изначальный периметр: " + polygon.getPerimeter());
         System.out.println("Изначальная площадь: " + polygon.getSquare());
 
-         polygon.moving(50, 100);
+
+         polygon.moving(200, 200);
          polygon.scale(2);
          frame.repaint();
 

@@ -143,6 +143,7 @@ public class Polygon {
 
         moving(center.x, center.y);
     }
+
     private Point findCenter() {
         int sumX = 0;
         int sumY = 0;
@@ -165,6 +166,8 @@ public class Polygon {
                 / (6 * square()));
         return new Point(centerX, centerY);
     }
+
+
 
 
 }
