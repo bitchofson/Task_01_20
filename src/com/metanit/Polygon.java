@@ -32,6 +32,7 @@ public class Polygon {
 
     public void addPoint(int x, int y) throws Exception {
         Point newPoint = new Point(x, y);
+
         if (!isPointAlreadyAdded(newPoint)) {
             points.add(newPoint);
         }else {
@@ -75,6 +76,7 @@ public class Polygon {
         }
         return p + distanceBetween(points.get(0), points.get(points.size() - 1));
     }
+
     // Нахождение дистанции между двумя точками.
     private double distanceBetween(Point p1, Point p2) {
         int x1 = p1.x;
@@ -93,7 +95,6 @@ public class Polygon {
     }
 
     public Polygon findRectangle() {
-        Point p1, p2, p3, p4;
 
         int maxX = points.get(0).x, minX = points.get(0).x;
         int maxY = points.get(0).y, minY = points.get(0).y;
@@ -114,6 +115,7 @@ public class Polygon {
         }
 
         Polygon rectangle = new Polygon();
+
         try {
             rectangle.addPoint(maxX, maxY);
             rectangle.addPoint(maxX, minY);
@@ -125,8 +127,8 @@ public class Polygon {
         return rectangle;
     }
 
-
     public void scale(double m) {
+
         if (m < 0) {
             return;
         }
@@ -145,6 +147,7 @@ public class Polygon {
     }
 
     private Point findCenter() {
+
         int sumX = 0;
         int sumY = 0;
 

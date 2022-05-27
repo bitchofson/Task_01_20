@@ -2,6 +2,7 @@ package com.metanit;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 /*
 20. Более простой вариант предыдущей задачи – все то же самое, но для прямоугольника.
@@ -50,16 +51,20 @@ public class Window {
         System.out.println("Изначальный периметр: " + polygon.getPerimeter());
         System.out.println("Изначальная площадь: " + polygon.getSquare());
 
-
-         polygon.moving(200, 200);
-         polygon.scale(2);
-         frame.repaint();
+          polygon.moving(200, 200);
+          polygon.scale(2);
+          frame.repaint();
 
 
         System.out.println("Периметр после масштабирования: " + polygon.getPerimeter());
         System.out.println("Площадь после масштабирования: " + polygon.getSquare());
 
-
+        Polygon rectangle = polygon.findRectangle();
+        ArrayList<Point> points = rectangle.getPoints();
+        System.out.print("Координаты точек прямоугольника, описывающего многоугольник: ");
+        for (Point point : points) {
+            System.out.print("(" + point.x + "," + point.y + ") ");
+        }
 
     }
 }

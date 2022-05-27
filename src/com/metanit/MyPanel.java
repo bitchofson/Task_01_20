@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class MyPanel extends JPanel {
 
-
     private ArrayList<Point> points;
 
     public void addPolygon(Polygon p) {
